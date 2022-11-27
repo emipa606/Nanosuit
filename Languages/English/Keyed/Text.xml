@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <NS.ArmorMode>Armor mode</NS.ArmorMode>
+  <NS.ArmorModeDesc>Placeholder</NS.ArmorModeDesc>
+  <NS.StrengthMode>Power mode</NS.StrengthMode>
+  <NS.StrengthModeDesc>Placeholder</NS.StrengthModeDesc>
+  <NS.Jump>Jump</NS.Jump>
+  <NS.LowEnergy>Low energy</NS.LowEnergy>
+  <NS.SpeedMode>Speed mode</NS.SpeedMode>
+  <NS.SpeedModeModeDesc>Placeholder</NS.SpeedModeModeDesc>
+  <NS.SpeedModeJumpModeOutsideCombat>Jump mode outside combat</NS.SpeedModeJumpModeOutsideCombat>
+  <NS.SpeedModeJumpModeOutsideCombatDesc>Placeholder</NS.SpeedModeJumpModeOutsideCombatDesc>
+  <NS.SpeedModeJumpModeInCombat>Jump mode in combat</NS.SpeedModeJumpModeInCombat>
+  <NS.SpeedModeJumpModeInCombatDesc>Placeholder</NS.SpeedModeJumpModeInCombatDesc>
+  <NS.CloakMode>Cloak mode</NS.CloakMode>
+  <NS.HackShields>Hack shields</NS.HackShields>
+  <NS.SymbiosysMode>Symbiosys mode</NS.SymbiosysMode>
+  <NS.SymbiosysModeDesc>Placeholder</NS.SymbiosysModeDesc>
+  <NS.MultipleModesAtTheSameTime>Multiple apparel modes at the same time</NS.MultipleModesAtTheSameTime>
+  <NS.UseSkipForJumping>Use skip ability for jumping</NS.UseSkipForJumping>
+  <NS.CurrentModVersion>Installed mod-version: {0}</NS.CurrentModVersion>
+</LanguageData>

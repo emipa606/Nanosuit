@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Nanosuit</name>
+  <author>Mezz, Ogam, Taranchuk</author>
+  <supportedVersions>
+    <li>1.3</li>
+  </supportedVersions>
+  <packageId>Remo.Nanosuit</packageId>
+  <description>Introducing the Crysis Nanosuit.
+
+Inspired by the Crysis series, the Nanosuit is brought into the Rimworld universe.
+
+All of the modes/functions use energy which is configurable in the [Apparel_Various.xml] file.
+I've made the Nanosuit to be overpowered since the suit is supposed to make a whoever wearing it, a one-man-army.
+
+A LOT of things are configurable via the XML file so if you feel it to be overpowered/underpowered, please customize it to your liking. I believe in the power of customization. Please DO share your settings in the discussions tab.
+
+Primary Functions:
+
+-Power Mode: Accuracy for range and melee is upped, Melee hits are devastating.
+-Armor Mode: Absorb any damage (melee, range, explosion)
+-Speed Mode: movement speed factor x5
+-Cloak Mode: Invisibility
+-Symbiosis Mode: Can heal any hediff in an instant.
+
+Secondary Functions:
+
+-Jumping: Can jump/skip instead of walking to do work. (Also works for combat)
+-Hack Shield: Can disable any shield (like an EMP) but won't stun. 
+-Jump: Can jump/skip to specified location.
+
+Tertiary Functions:
+
+-Night Visor: Accuracy Bonus, No debuff for "darkness".
+-Psychic Wave Control: Won't be effected by psychic phenomena. Also charges energy of suit.
+-Enviromental Control: Temperature protection range -200~200 degrees. 
+-Rebreather: Able to breath in space. (Save Our Ship 2 compatibility)
+
+Nanosuit Stats:
+
+-Armor Rating Sharp: 100%
+-Armor Rating Blunt: 100%
+-Armor Rating Heat: 100%
+-Insulation Cold: 100
+-Insulation Hot: 100
+-Move speed offset: 1c/s
+-Once a pawn wears a Nanosuit, they will not be able to take it off. It's bonded to the wearer.
+-Needs surgery to remove Nanosuit.
+
+All the functions can be hotkeyed in [keyboard configurations].
+
+Config options in [mod settings]
+-Enable/disable using multiple modes at the same time.
+-Option to make [Jumping] to function like the jetpack or skipping like the psychic power.
+</description>
+</ModMetaData>

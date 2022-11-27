@@ -1,0 +1,22 @@
+﻿using HarmonyLib;
+using RimWorld;
+using Verse;
+
+namespace Nanosuit;
+
+[HarmonyPatch(typeof(StatWorker), "StatOffsetFromGear")]
+public class StatOffsetFromGear_Patch
+{
+    public static void Postfix(ref float __result, Thing gear, StatDef stat)
+    {
+        if (stat != StatDefOf.ShootingAccuracyPawn || gear is not Apparel_Nanosuit nanosuit)
+        {
+            return;
+        }
+
+        if (nanosuit.NightVisionWorks())
+        {
+            __result += nanosuit.def.nightVisor.accuracyBonus;
+        }
+    }
+}
