@@ -19,6 +19,12 @@
     <tickerType>Never</tickerType>
     <burnableByRecipe>true</burnableByRecipe>
     <smeltable>true</smeltable>
+    <apparel>
+      <tags>
+        <li>Royal</li>
+        <li>RoyalTier6</li>
+      </tags>
+    </apparel>
     <comps>
       <li Class="CompProperties_Forbiddable" />
       <li>
