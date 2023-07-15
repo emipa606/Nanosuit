@@ -1,10 +1,36 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="NanosuitBase">
     <defName>NS_Apparel_NanosuitHelmet</defName>
     <label>nanosuit helmet</label>
     <description>Nanosuit helmet</description>
-    <techLevel>Spacer</techLevel>
+    <techLevel>Spacer</techLevel>    
+	<recipeMaker>
+      <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
+      <researchPrerequisite>PoweredArmor</researchPrerequisite>
+      <skillRequirements>
+        <Crafting>20</Crafting>
+      </skillRequirements>
+      <recipeUsers Inherit="False">
+        <li>FabricationBench</li>
+      </recipeUsers>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <defaultIngredientFilter>
+        <categories>
+          <li>Root</li>
+        </categories>
+        <disallowedThingDefs>
+          <li>Gold</li>
+          <li>Silver</li>
+          <li>Plasteel</li>
+          <li>Jade</li>
+          <li>Uranium</li>
+        </disallowedThingDefs>
+      </defaultIngredientFilter>
+    </recipeMaker>
     <graphicData>
       <texPath>Things/Pawn/Humanlike/Apparel/NanosuitHelmet/NanosuitHelmet</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -26,7 +52,21 @@
     </statBases>
     <smeltable>false</smeltable>
     <useHitPoints>false</useHitPoints>
+    <tradeTags>
+      <li>HiTechArmor</li>
+    </tradeTags>
+    <costList>
+      <ComponentSpacer>10</ComponentSpacer>
+      <Plasteel>50</Plasteel>
+      <Uranium>10</Uranium>
+      <Hyperweave>50</Hyperweave>
+      <AIPersonaCore>1</AIPersonaCore>
+    </costList>
     <apparel>
+	  <tags>
+        <li>Royal</li>
+        <li>RoyalTier6</li>
+      </tags>
       <bodyPartGroups>
         <li>FullHead</li>
       </bodyPartGroups>
