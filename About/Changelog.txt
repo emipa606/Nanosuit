@@ -1,5 +1,8 @@
 # Changelog for Nanosuit
 
+1.4.2 - The helmet should now be craftable, thanks to vasmark1!
+
+
 1.4.1 - Added Royalty tags
 
 

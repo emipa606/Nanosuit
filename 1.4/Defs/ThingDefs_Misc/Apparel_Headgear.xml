@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ThingDef ParentName="NanosuitBase">
     <defName>NS_Apparel_NanosuitHelmet</defName>
     <label>nanosuit helmet</label>
     <description>Nanosuit helmet</description>
-    <techLevel>Spacer</techLevel>    
-	<recipeMaker>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>
       <researchPrerequisite>PoweredArmor</researchPrerequisite>
       <skillRequirements>
@@ -63,7 +63,7 @@
       <AIPersonaCore>1</AIPersonaCore>
     </costList>
     <apparel>
-	  <tags>
+      <tags>
         <li>Royal</li>
         <li>RoyalTier6</li>
       </tags>
