@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
 public static class GetStatValue_Patch

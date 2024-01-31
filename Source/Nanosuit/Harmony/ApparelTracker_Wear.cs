@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_ApparelTracker), "Wear")]
 public static class ApparelTracker_Wear

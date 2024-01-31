@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Verb_MeleeAttackDamage), "ApplyMeleeDamageToTarget")]
 public static class Patch_ApplyMeleeDamageToTarget

@@ -2,14 +2,14 @@
 using HarmonyLib;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [StaticConstructorOnStartup]
 public static class ModCompatibility
 {
-    public static Type ShieldMechBubbleType;
-    public static Type ArchotechShieldBelt;
-    public static Type RangedShieldBelt;
+    public static readonly Type ShieldMechBubbleType;
+    public static readonly Type ArchotechShieldBelt;
+    public static readonly Type RangedShieldBelt;
 
     static ModCompatibility()
     {

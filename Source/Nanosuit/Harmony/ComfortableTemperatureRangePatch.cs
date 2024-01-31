@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(GenTemperature), "ComfortableTemperatureRange", typeof(Pawn))]
 public static class ComfortableTemperatureRangePatch

@@ -20,4 +20,7 @@
   <NS.MultipleModesAtTheSameTime>Plusieurs modes d'habillement en même temps</NS.MultipleModesAtTheSameTime>
   <NS.UseSkipForJumping>Utiliser la capacité de saut pour sauter</NS.UseSkipForJumping>
   <NS.CurrentModVersion>Version installée du module : {0}</NS.CurrentModVersion>
+  <NS.JumpDesc>Peut sauter/sauter jusqu'à l'endroit spécifié.</NS.JumpDesc>
+  <NS.CloakModeDesc>Invisibilité</NS.CloakModeDesc>
+  <NS.HackShieldsDesc>Peut désactiver n'importe quel bouclier (comme un EMP) mais n'étourdit pas.</NS.HackShieldsDesc>
 </LanguageData>

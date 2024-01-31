@@ -7,15 +7,15 @@ namespace Nanosuit;
 
 public static class Utils
 {
-    private static readonly HashSet<JobDef> combatJobs = new HashSet<JobDef>
-    {
+    private static readonly HashSet<JobDef> combatJobs =
+    [
         JobDefOf.AttackMelee,
         JobDefOf.AttackStatic,
         JobDefOf.FleeAndCower,
         JobDefOf.ManTurret,
         JobDefOf.Wait_Combat,
         JobDefOf.Flee
-    };
+    ];
 
     public static IEnumerable<Apparel_Nanosuit> GetNanosuits(this Pawn pawn)
     {

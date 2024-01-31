@@ -20,4 +20,7 @@
   <NS.MultipleModesAtTheSameTime>Одновременное использование нескольких режимов одежды</NS.MultipleModesAtTheSameTime>
   <NS.UseSkipForJumping>Используйте способность пропускать для прыжков</NS.UseSkipForJumping>
   <NS.CurrentModVersion>Установленная версия мода: {0}</NS.CurrentModVersion>
+  <NS.JumpDesc>Можно прыгать/скакать в указанное место.</NS.JumpDesc>
+  <NS.CloakModeDesc>Невидимость</NS.CloakModeDesc>
+  <NS.HackShieldsDesc>Может вывести из строя любой щит (например, ЭМИ), но не оглушает.</NS.HackShieldsDesc>
 </LanguageData>

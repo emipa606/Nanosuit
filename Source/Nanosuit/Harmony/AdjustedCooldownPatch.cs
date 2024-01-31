@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Tool), "AdjustedCooldown", typeof(Thing))]
 internal class AdjustedCooldownPatch

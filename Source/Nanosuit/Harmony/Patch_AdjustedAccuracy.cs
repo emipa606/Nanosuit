@@ -1,14 +1,14 @@
 ﻿using HarmonyLib;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(VerbProperties), "AdjustedAccuracy")]
 public static class Patch_AdjustedAccuracy
 {
     public static void Postfix(ref float __result, Thing equipment)
     {
-        if (equipment.ParentHolder is not Pawn_EquipmentTracker { pawn: { } } pawn_EquipmentTracker)
+        if (equipment.ParentHolder is not Pawn_EquipmentTracker { pawn: not null } pawn_EquipmentTracker)
         {
             return;
         }

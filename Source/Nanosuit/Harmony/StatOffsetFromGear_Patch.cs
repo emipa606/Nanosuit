@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(StatWorker), "StatOffsetFromGear")]
 public class StatOffsetFromGear_Patch

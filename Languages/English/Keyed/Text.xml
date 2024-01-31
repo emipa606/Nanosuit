@@ -1,21 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
   <NS.ArmorMode>Armor mode</NS.ArmorMode>
-  <NS.ArmorModeDesc>Placeholder</NS.ArmorModeDesc>
+  <NS.ArmorModeDesc>Absorb any damage (melee, range, explosion)</NS.ArmorModeDesc>
   <NS.StrengthMode>Power mode</NS.StrengthMode>
-  <NS.StrengthModeDesc>Placeholder</NS.StrengthModeDesc>
+  <NS.StrengthModeDesc>Accuracy for range and melee is upped, Melee hits are devastating.</NS.StrengthModeDesc>
   <NS.Jump>Jump</NS.Jump>
+  <NS.JumpDesc>Can jump/skip to specified location.</NS.JumpDesc>
   <NS.LowEnergy>Low energy</NS.LowEnergy>
   <NS.SpeedMode>Speed mode</NS.SpeedMode>
-  <NS.SpeedModeModeDesc>Placeholder</NS.SpeedModeModeDesc>
+  <NS.SpeedModeModeDesc>Movement speed factor x5</NS.SpeedModeModeDesc>
   <NS.SpeedModeJumpModeOutsideCombat>Jump mode outside combat</NS.SpeedModeJumpModeOutsideCombat>
-  <NS.SpeedModeJumpModeOutsideCombatDesc>Placeholder</NS.SpeedModeJumpModeOutsideCombatDesc>
+  <NS.SpeedModeJumpModeOutsideCombatDesc>Can jump/skip to specified location.</NS.SpeedModeJumpModeOutsideCombatDesc>
   <NS.SpeedModeJumpModeInCombat>Jump mode in combat</NS.SpeedModeJumpModeInCombat>
-  <NS.SpeedModeJumpModeInCombatDesc>Placeholder</NS.SpeedModeJumpModeInCombatDesc>
+  <NS.SpeedModeJumpModeInCombatDesc>Can jump/skip to specified location.</NS.SpeedModeJumpModeInCombatDesc>
   <NS.CloakMode>Cloak mode</NS.CloakMode>
+  <NS.CloakModeDesc>Invisibility</NS.CloakModeDesc>
   <NS.HackShields>Hack shields</NS.HackShields>
+  <NS.HackShieldsDesc>Can disable any shield (like an EMP) but won't stun.</NS.HackShieldsDesc>
   <NS.SymbiosysMode>Symbiosys mode</NS.SymbiosysMode>
-  <NS.SymbiosysModeDesc>Placeholder</NS.SymbiosysModeDesc>
+  <NS.SymbiosysModeDesc>Can heal any hediff in an instant</NS.SymbiosysModeDesc>
   <NS.MultipleModesAtTheSameTime>Multiple apparel modes at the same time</NS.MultipleModesAtTheSameTime>
   <NS.UseSkipForJumping>Use skip ability for jumping</NS.UseSkipForJumping>
   <NS.CurrentModVersion>Installed mod-version: {0}</NS.CurrentModVersion>

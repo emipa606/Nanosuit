@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_PathFollower), "StartPath")]
 public class StartPathPatch

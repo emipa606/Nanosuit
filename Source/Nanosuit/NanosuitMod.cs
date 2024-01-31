@@ -12,8 +12,7 @@ internal class NanosuitMod : Mod
     public NanosuitMod(ModContentPack pack) : base(pack)
     {
         settings = GetSettings<NanosuitSettings>();
-        currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.Nanosuit"));
+        currentVersion = VersionFromManifest.GetVersionFromModMetaData(pack.ModMetaData);
     }
 
     public override void DoSettingsWindowContents(Rect inRect)

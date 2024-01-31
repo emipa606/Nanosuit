@@ -2,15 +2,14 @@
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(ThingOwner<Thing>))]
 [HarmonyPatch("TryAdd")]
-[HarmonyPatch(new[]
-{
+[HarmonyPatch([
     typeof(Thing),
     typeof(bool)
-})]
+])]
 internal static class ThingOwner_TryAdd
 {
     private static void Postfix(ThingOwner<Thing> __instance, bool __result, Thing item)

@@ -2,29 +2,26 @@
 using HarmonyLib;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_CarryTracker))]
 [HarmonyPatch("TryDropCarriedThing")]
-[HarmonyPatch(new[]
-{
+[HarmonyPatch([
     typeof(IntVec3),
     typeof(int),
     typeof(ThingPlaceMode),
     typeof(Thing),
     typeof(Action<Thing, int>)
-}, new ArgumentType[]
-{
+], [
     0,
     0,
     0,
     ArgumentType.Out,
     0
-})]
+])]
 public static class TryDropCarriedThingPatch2
 {
-    public static bool Prefix(Pawn_CarryTracker __instance, int count, IntVec3 dropLoc, ThingPlaceMode mode,
-        Thing resultingThing, Action<Thing, int> placedAction = null)
+    public static bool Prefix(Pawn_CarryTracker __instance)
     {
         if (__instance.pawn != TryDropCarriedThingPatch.pawn)
         {

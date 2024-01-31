@@ -2,11 +2,11 @@
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_ApparelTracker), "TryDrop",
-    new[] { typeof(Apparel), typeof(Apparel), typeof(IntVec3), typeof(bool) },
-    new[] { ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal })]
+    [typeof(Apparel), typeof(Apparel), typeof(IntVec3), typeof(bool)],
+    [ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal])]
 public static class Patch_TryDrop
 {
     private static void Postfix(Pawn_ApparelTracker __instance, Apparel ap)

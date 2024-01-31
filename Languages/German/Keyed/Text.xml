@@ -20,4 +20,7 @@
   <NS.MultipleModesAtTheSameTime>Mehrere Bekleidungsmodi zur gleichen Zeit</NS.MultipleModesAtTheSameTime>
   <NS.UseSkipForJumping>Benutze die Fähigkeit zum Springen</NS.UseSkipForJumping>
   <NS.CurrentModVersion>Installierte Mod-Version: {0}</NS.CurrentModVersion>
+  <NS.JumpDesc>Kann zu einer bestimmten Stelle springen/springen.</NS.JumpDesc>
+  <NS.CloakModeDesc>Unsichtbarkeit</NS.CloakModeDesc>
+  <NS.HackShieldsDesc>Kann jeden Schild deaktivieren (wie ein EMP), betäubt aber nicht.</NS.HackShieldsDesc>
 </LanguageData>

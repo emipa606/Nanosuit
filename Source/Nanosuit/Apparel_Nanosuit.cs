@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
+using Nanosuit.Harmony;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
@@ -44,12 +46,17 @@ public class Apparel_Nanosuit : Apparel
                 energy = def.maxEnergyAmount;
             }
 
-            return energy + energyBonus;
+            return Math.Min(energy + energyBonus, def.maxEnergyAmount);
         }
         set
         {
             energy = value;
-            if (!(energy < 0) || !(energyBonus > 0))
+            if (energy >= 0)
+            {
+                return;
+            }
+
+            if (energyBonus <= 0)
             {
                 return;
             }
@@ -62,7 +69,7 @@ public class Apparel_Nanosuit : Apparel
         }
     }
 
-    public NanosuitDef def => base.def as NanosuitDef;
+    public new NanosuitDef def => base.def as NanosuitDef;
 
     public override bool CheckPreAbsorbDamage(DamageInfo dinfo)
     {
@@ -258,7 +265,7 @@ public class Apparel_Nanosuit : Apparel
     public bool NightVisionWorks()
     {
         var pawn = Wearer;
-        return pawn is { Map: { } } && pawn.Map.glowGrid.PsychGlowAt(pawn.Position) == PsychGlow.Dark &&
+        return pawn is { Map: not null } && pawn.Map.glowGrid.PsychGlowAt(pawn.Position) == PsychGlow.Dark &&
                nightVisorActive && energy >= def.nightVisor.energyConsumptionPerTickWhenActive;
     }
 
@@ -367,7 +374,7 @@ public class Apparel_Nanosuit : Apparel
                 }
             }
 
-            foreach (var apparel in pawn.apparel?.WornApparel ?? new List<Apparel>())
+            foreach (var apparel in pawn.apparel?.WornApparel ?? [])
             {
                 if (IsCustomShieldBelt(apparel))
                 {
@@ -600,7 +607,7 @@ public class Apparel_Nanosuit : Apparel
                 }
             }
 
-            var list = pawn.apparel?.WornApparel ?? new List<Apparel>();
+            var list = pawn.apparel?.WornApparel ?? [];
             for (var num = list.Count - 1; num >= 0; num--)
             {
                 var apparel = list[num];
@@ -729,13 +736,9 @@ public class Apparel_Nanosuit : Apparel
                 activeModes = new Dictionary<ApparelMode, bool>();
             }
 
-            if (activeModes.ContainsKey(apparelMode))
+            if (!activeModes.TryAdd(apparelMode, true))
             {
                 activeModes[apparelMode] = !activeModes[apparelMode];
-            }
-            else
-            {
-                activeModes[apparelMode] = true;
             }
         }
         else

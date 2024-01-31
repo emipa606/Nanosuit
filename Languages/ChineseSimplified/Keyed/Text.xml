@@ -20,4 +20,7 @@
   <NS.MultipleModesAtTheSameTime>同时拥有多种服装模式</NS.MultipleModesAtTheSameTime>
   <NS.UseSkipForJumping>使用跳远能力进行跳跃</NS.UseSkipForJumping>
   <NS.CurrentModVersion>已安装的mod-version。{0}</NS.CurrentModVersion>
+  <NS.JumpDesc>可以跳转/滑行到指定位置。</NS.JumpDesc>
+  <NS.CloakModeDesc>隐形</NS.CloakModeDesc>
+  <NS.HackShieldsDesc>可使任何护盾失效（如电磁脉冲），但不会眩晕。</NS.HackShieldsDesc>
 </LanguageData>

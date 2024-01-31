@@ -1,5 +1,9 @@
 # Changelog for Nanosuit
 
+1.4.3 - Fixed energy increasing over limit, made the icons a bit more clear
+Used DeepL to update translations for ChineseSimplified, French, German, Russian
+
+
 1.4.2 - The helmet should now be craftable, thanks to vasmark1!
 
 

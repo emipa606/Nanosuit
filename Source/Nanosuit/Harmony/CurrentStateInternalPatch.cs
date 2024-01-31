@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace Nanosuit;
+namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(ThoughtWorker_PsychicDrone), "CurrentStateInternal")]
 public static class CurrentStateInternalPatch
