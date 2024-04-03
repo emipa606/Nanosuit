@@ -3,7 +3,7 @@ using Verse;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(Tool), "AdjustedCooldown", typeof(Thing))]
+[HarmonyPatch(typeof(Tool), nameof(Tool.AdjustedCooldown), typeof(Thing))]
 internal class AdjustedCooldownPatch
 {
     private static void Postfix(ref float __result, Thing ownerEquipment)

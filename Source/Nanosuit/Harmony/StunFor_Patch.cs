@@ -3,7 +3,7 @@ using RimWorld;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(StunHandler), "StunFor")]
+[HarmonyPatch(typeof(StunHandler), nameof(StunHandler.StunFor))]
 public class StunFor_Patch
 {
     private static bool Prefix()

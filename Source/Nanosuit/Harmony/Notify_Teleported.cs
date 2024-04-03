@@ -3,7 +3,7 @@ using Verse;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(Pawn), "Notify_Teleported")]
+[HarmonyPatch(typeof(Pawn), nameof(Pawn.Notify_Teleported))]
 public class Notify_Teleported
 {
     public static bool preventEndingJob;

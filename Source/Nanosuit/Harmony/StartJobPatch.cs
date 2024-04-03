@@ -5,7 +5,7 @@ using Verse.AI;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(Pawn_JobTracker), "StartJob")]
+[HarmonyPatch(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.StartJob))]
 public class StartJobPatch
 {
     private static bool Prefix(Pawn ___pawn, Job newJob)

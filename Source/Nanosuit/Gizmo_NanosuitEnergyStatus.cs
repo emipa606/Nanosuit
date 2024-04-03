@@ -14,7 +14,7 @@ public class Gizmo_NanosuitEnergyStatus : Gizmo
 
     public Gizmo_NanosuitEnergyStatus()
     {
-        order = -100f;
+        Order = -100f;
     }
 
     public override float GetWidth(float maxWidth)

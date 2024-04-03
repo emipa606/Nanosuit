@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using HarmonyLib;
 using Nanosuit.Harmony;
 using RimWorld;
@@ -12,6 +13,7 @@ namespace Nanosuit;
 
 public class Apparel_Nanosuit : Apparel
 {
+    private readonly MethodInfo breakMethod = AccessTools.Method(typeof(CompShield), "Break");
     private Ability ability;
     public ApparelMode activeMode;
     public Dictionary<ApparelMode, bool> activeModes;
@@ -595,7 +597,7 @@ public class Apparel_Nanosuit : Apparel
             {
                 foreach (var shield in shieldBelts)
                 {
-                    shield.GetComp<CompShield>().Break();
+                    breakMethod.Invoke(shield.GetComp<CompShield>(), null);
                 }
             }
 
@@ -691,7 +693,7 @@ public class Apparel_Nanosuit : Apparel
         }
 
         Wearer.rotationTracker.FaceCell(target);
-        var pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnJumper, Wearer, target,
+        var pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer, Wearer, target,
             DefDatabase<EffecterDef>.GetNamedSilentFail("JumpFlightEffect"),
             DefDatabase<SoundDef>.GetNamedSilentFail("JumpPackLand"), true);
         if (pawnFlyer != null)

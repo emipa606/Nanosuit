@@ -4,7 +4,7 @@ using Verse;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(Pawn_ApparelTracker), "TryDrop",
+[HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.TryDrop),
     [typeof(Apparel), typeof(Apparel), typeof(IntVec3), typeof(bool)],
     [ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal])]
 public static class Patch_TryDrop

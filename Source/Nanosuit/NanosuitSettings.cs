@@ -5,7 +5,6 @@ namespace Nanosuit;
 
 internal class NanosuitSettings : ModSettings
 {
-    private static Vector2 scrollPosition = Vector2.zero;
     public bool nanosuitModesAtTheSameTime;
     public bool useSkipForJumping;
 

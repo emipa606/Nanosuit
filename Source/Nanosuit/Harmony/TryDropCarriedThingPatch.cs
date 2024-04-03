@@ -4,19 +4,8 @@ using Verse;
 
 namespace Nanosuit.Harmony;
 
-[HarmonyPatch(typeof(Pawn_CarryTracker))]
-[HarmonyPatch("TryDropCarriedThing")]
-[HarmonyPatch([
-    typeof(IntVec3),
-    typeof(ThingPlaceMode),
-    typeof(Thing),
-    typeof(Action<Thing, int>)
-], [
-    0,
-    0,
-    ArgumentType.Out,
-    0
-])]
+[HarmonyPatch(typeof(Pawn_CarryTracker), nameof(Pawn_CarryTracker.TryDropCarriedThing),
+    [typeof(IntVec3), typeof(ThingPlaceMode), typeof(Thing), typeof(Action<Thing, int>)], [0, 0, ArgumentType.Out, 0])]
 public static class TryDropCarriedThingPatch
 {
     public static Pawn pawn;
