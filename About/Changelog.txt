@@ -1,5 +1,8 @@
 # Changelog for Nanosuit
 
+1.5.1 - Added some xml-inheritance, shouldnt affect anything, just for compatibility
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 

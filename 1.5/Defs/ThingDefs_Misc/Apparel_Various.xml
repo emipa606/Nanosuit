@@ -1,36 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ThingDef Name="NanosuitBase" Abstract="True">
-    <thingClass>Apparel</thingClass>
-    <category>Item</category>
-    <selectable>True</selectable>
-    <pathCost>14</pathCost>
+  <ThingDef Name="NanosuitBase" ParentName="ApparelNoQualityBase" Abstract="True">
     <techLevel>Archotech</techLevel>
-    <graphicData>
-      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
-    </graphicData>
-    <drawGUIOverlay>true</drawGUIOverlay>
     <statBases>
       <Flammability>0</Flammability>
       <Beauty>1</Beauty>
+      <DeteriorationRate>0</DeteriorationRate>
     </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>True</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <burnableByRecipe>true</burnableByRecipe>
-    <smeltable>true</smeltable>
     <apparel>
       <tags>
         <li>Royal</li>
         <li>RoyalTier6</li>
       </tags>
     </apparel>
-    <comps>
-      <li Class="CompProperties_Forbiddable" />
-      <li>
-        <compClass>CompColorable</compClass>
-      </li>
-    </comps>
   </ThingDef>
   <ThingDef Name="ApparelArmorNanoSuitBase" ParentName="NanosuitBase" Abstract="True">
     <techLevel>Spacer</techLevel>
