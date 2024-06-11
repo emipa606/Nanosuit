@@ -202,7 +202,7 @@ public class Apparel_Nanosuit : Apparel
 
         if (def.environmentalControl != null && energy > 0)
         {
-            ComfortableTemperatureRangePatch.dontCheckThis = true;
+            GenTemperature_ComfortableTemperatureRange.dontCheckThis = true;
             var ambientTemperature = Wearer.AmbientTemperature;
             var confortableTemperature = Wearer.ComfortableTemperatureRange();
             if (!confortableTemperature.Includes(ambientTemperature))
@@ -210,7 +210,7 @@ public class Apparel_Nanosuit : Apparel
                 Energy -= def.environmentalControl.energyConsumptionWhenActive;
             }
 
-            ComfortableTemperatureRangePatch.dontCheckThis = false;
+            GenTemperature_ComfortableTemperatureRange.dontCheckThis = false;
         }
 
         var cloakHediff = Wearer.health.hediffSet.GetFirstHediffOfDef(NS_DefOf.NS_CloakMode);
@@ -644,14 +644,14 @@ public class Apparel_Nanosuit : Apparel
         }
         else
         {
-            TryDropCarriedThingPatch.pawn = Wearer;
+            Pawn_CarryTracker_TryDropCarriedThing.pawn = Wearer;
             JumpTo(target, energyToConsume);
         }
     }
 
     public void SkipTo(IntVec3 target, float energyToConsume)
     {
-        Notify_Teleported.preventEndingJob = true;
+        Pawn_Notify_Teleported.preventEndingJob = true;
         if (customTeleportComp is null)
         {
             ability = new Ability(Wearer, DefDatabase<AbilityDef>.GetNamed("Skip"));
@@ -681,7 +681,7 @@ public class Apparel_Nanosuit : Apparel
         }
 
         skipTicks = 60;
-        Notify_Teleported.preventEndingJob = false;
+        Pawn_Notify_Teleported.preventEndingJob = false;
     }
 
     public void JumpTo(IntVec3 target, float energyToConsume)

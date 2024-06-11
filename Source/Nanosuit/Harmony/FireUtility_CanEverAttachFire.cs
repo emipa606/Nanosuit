@@ -6,7 +6,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(FireUtility), nameof(FireUtility.CanEverAttachFire))]
-public class CanEverAttachFire_Patch
+public class FireUtility_CanEverAttachFire
 {
     public static void Postfix(Thing t, ref bool __result)
     {

@@ -5,7 +5,7 @@ using Verse.AI;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_PathFollower), nameof(Pawn_PathFollower.StartPath))]
-public class StartPathPatch
+public class Pawn_PathFollower_StartPath
 {
     private static void Postfix(Pawn_PathFollower __instance, Pawn ___pawn)
     {

@@ -4,7 +4,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(VerbProperties), "AdjustedAccuracy")]
-public static class Patch_AdjustedAccuracy
+public static class VerbProperties_AdjustedAccuracy
 {
     public static void Postfix(ref float __result, Thing equipment)
     {

@@ -5,7 +5,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
-public static class GetStatValue_Patch
+public static class StatExtension_GetStatValue
 {
     private static void Postfix(Thing thing, StatDef stat, ref float __result)
     {

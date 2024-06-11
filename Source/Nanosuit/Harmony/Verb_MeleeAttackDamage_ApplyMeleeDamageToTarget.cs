@@ -6,7 +6,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Verb_MeleeAttackDamage), "ApplyMeleeDamageToTarget")]
-public static class Patch_ApplyMeleeDamageToTarget
+public static class Verb_MeleeAttackDamage_ApplyMeleeDamageToTarget
 {
     public static void Prefix(Verb_MeleeAttackDamage __instance, LocalTargetInfo target)
     {

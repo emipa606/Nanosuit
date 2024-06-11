@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using System.Reflection;
+using Verse;
 
 namespace Nanosuit.Harmony;
 
@@ -7,6 +8,6 @@ internal static class HarmonyContainer
 {
     static HarmonyContainer()
     {
-        new HarmonyLib.Harmony("Remo.Nanosuit").PatchAll();
+        new HarmonyLib.Harmony("Remo.Nanosuit").PatchAll(Assembly.GetExecutingAssembly());
     }
 }

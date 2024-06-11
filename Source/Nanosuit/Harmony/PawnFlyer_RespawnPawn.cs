@@ -6,11 +6,11 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(PawnFlyer), "RespawnPawn")]
-public class RespawnPawn_Patch
+public class PawnFlyer_RespawnPawn
 {
     public static void Prefix(PawnFlyer __instance, out Pawn __state)
     {
-        TryDropCarriedThingPatch.pawn = null;
+        Pawn_CarryTracker_TryDropCarriedThing.pawn = null;
         __state = __instance.FlyingPawn;
     }
 

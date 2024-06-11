@@ -5,7 +5,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(ThoughtWorker_PsychicDrone), "CurrentStateInternal")]
-public static class CurrentStateInternalPatch
+public static class ThoughtWorker_PsychicDrone_CurrentStateInternal
 {
     public static void Postfix(Pawn p, ref ThoughtState __result)
     {

@@ -174,8 +174,10 @@
     <isBad>false</isBad>
     <hediffClass>HediffWithComps</hediffClass>
     <comps>
-      <li Class="HediffCompProperties">
+      <li Class="HediffCompProperties_Invisibility">
         <compClass>HediffComp_Invisibility</compClass>
+        <visibleToPlayer>true</visibleToPlayer>
+        <affectedByDisruptor>false</affectedByDisruptor>
       </li>
       <li Class="HediffCompProperties_DisappearsOnDeath" />
     </comps>

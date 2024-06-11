@@ -5,7 +5,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(ThingOwner<Thing>), nameof(ThingOwner<Thing>.TryAdd), typeof(Thing), typeof(bool))]
-internal static class ThingOwner_TryAdd
+internal static class ThingOwnerThing_TryAdd
 {
     private static void Postfix(ThingOwner<Thing> __instance, bool __result, Thing item)
     {

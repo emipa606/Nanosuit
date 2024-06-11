@@ -7,7 +7,7 @@ namespace Nanosuit.Harmony;
 [HarmonyPatch(typeof(Pawn_ApparelTracker), nameof(Pawn_ApparelTracker.TryDrop),
     [typeof(Apparel), typeof(Apparel), typeof(IntVec3), typeof(bool)],
     [ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal])]
-public static class Patch_TryDrop
+public static class Pawn_ApparelTracker_TryDrop
 {
     private static void Postfix(Pawn_ApparelTracker __instance, Apparel ap)
     {

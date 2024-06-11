@@ -5,7 +5,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(StatWorker), nameof(StatWorker.StatOffsetFromGear))]
-public class StatOffsetFromGear_Patch
+public class StatWorker_StatOffsetFromGear
 {
     public static void Postfix(ref float __result, Thing gear, StatDef stat)
     {

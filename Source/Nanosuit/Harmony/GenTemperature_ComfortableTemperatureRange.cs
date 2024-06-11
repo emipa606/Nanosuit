@@ -4,7 +4,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(GenTemperature), nameof(GenTemperature.ComfortableTemperatureRange), typeof(Pawn))]
-public static class ComfortableTemperatureRangePatch
+public static class GenTemperature_ComfortableTemperatureRange
 {
     public static bool dontCheckThis;
 

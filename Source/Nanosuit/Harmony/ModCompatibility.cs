@@ -20,9 +20,9 @@ public static class ModCompatibility
                 var type = AccessTools.TypeByName("ShipInteriorMod2");
                 var harmony = new HarmonyLib.Harmony("Remo.Nanosuit");
                 harmony.Patch(AccessTools.Method(type, "HasSpaceSuitSlow"), null,
-                    new HarmonyMethod(typeof(ModCompatibility), "HasSpaceSuitSlow_Postfix"));
+                    new HarmonyMethod(typeof(ModCompatibility), nameof(HasSpaceSuitSlow_Postfix)));
                 harmony.Patch(AccessTools.Method(type, "hasSpaceSuit"), null,
-                    new HarmonyMethod(typeof(ModCompatibility), "hasSpaceSuit_Postfix"));
+                    new HarmonyMethod(typeof(ModCompatibility), nameof(hasSpaceSuit_Postfix)));
             }
             catch (Exception)
             {

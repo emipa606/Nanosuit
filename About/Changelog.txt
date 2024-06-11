@@ -1,5 +1,8 @@
 # Changelog for Nanosuit
 
+1.5.2 - Fixed the cloak mode
+
+
 1.5.1 - Added some xml-inheritance, shouldnt affect anything, just for compatibility
 
 

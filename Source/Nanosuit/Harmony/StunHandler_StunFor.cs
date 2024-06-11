@@ -4,10 +4,10 @@ using RimWorld;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(StunHandler), nameof(StunHandler.StunFor))]
-public class StunFor_Patch
+public class StunHandler_StunFor
 {
     private static bool Prefix()
     {
-        return !Notify_Teleported.preventEndingJob;
+        return !Pawn_Notify_Teleported.preventEndingJob;
     }
 }
