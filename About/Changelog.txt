@@ -1,5 +1,8 @@
 # Changelog for Nanosuit
 
+1.5.3 - Fixed issue with Anomaly pawn abilities
+
+
 1.5.2 - Fixed the cloak mode
 
 

@@ -8,7 +8,7 @@ public static class VerbProperties_AdjustedAccuracy
 {
     public static void Postfix(ref float __result, Thing equipment)
     {
-        if (equipment.ParentHolder is not Pawn_EquipmentTracker { pawn: not null } pawn_EquipmentTracker)
+        if (equipment is not { ParentHolder: Pawn_EquipmentTracker { pawn: not null } pawn_EquipmentTracker })
         {
             return;
         }
