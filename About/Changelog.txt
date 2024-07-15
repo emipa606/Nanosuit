@@ -1,5 +1,8 @@
 # Changelog for Nanosuit
 
+1.5.4 - Updated russian translation, thanks vasmark1
+
+
 1.5.3 - Fixed issue with Anomaly pawn abilities
 
 
