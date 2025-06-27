@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <KeyBindingCategoryDef>
+    <defName>NS_Nanosuits</defName>
+    <label>Nanosuits</label>
+    <description>Keybinds for Nanosuits.</description>
+    <isGameUniversal>true</isGameUniversal>
+  </KeyBindingCategoryDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_JumpMode</defName>
+    <label>Jump mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_SpeedMode</defName>
+    <label>Speed mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_StrengthMode</defName>
+    <label>Strength mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_CloakModeKey</defName>
+    <label>Cloak mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_ArmorMode</defName>
+    <label>Armor mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_HackShields</defName>
+    <label>Hack shields</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+  <KeyBindingDef>
+    <category>NS_Nanosuits</category>
+    <defName>NS_SymbiosysMode</defName>
+    <label>Symbiosys mode</label>
+    <defaultKeyCodeA>
+    </defaultKeyCodeA>
+  </KeyBindingDef>
+</Defs>

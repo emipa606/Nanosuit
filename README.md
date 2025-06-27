@@ -5,6 +5,8 @@
 Update of Mezz, Ogam, Taranchuks mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2518548808
 
+Uses jumo logic from either Royalty or Biotech so one of those DLCs are required. 
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
@@ -94,6 +96,6 @@ You can commission art from me via Discord Ogam#7154
 -  If you have the solution for a problem, please post it to the GitHub repository.
 -  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
+ 
 
-
-[![Image](https://img.shields.io/github/v/release/emipa606/Nanosuit?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894429906)
+[![Image](https://img.shields.io/github/v/release/emipa606/Nanosuit?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894429906) | tags:  overpowered,  customization

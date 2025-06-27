@@ -39,7 +39,7 @@ public static class ModCompatibility
     {
         if (!__result)
         {
-            __result = HasSpaceProtection(pawn);
+            __result = hasSpaceProtection(pawn);
         }
     }
 
@@ -47,11 +47,11 @@ public static class ModCompatibility
     {
         if (!__result)
         {
-            __result = HasSpaceProtection(pawn);
+            __result = hasSpaceProtection(pawn);
         }
     }
 
-    private static bool HasSpaceProtection(Pawn pawn)
+    private static bool hasSpaceProtection(Pawn pawn)
     {
         foreach (var apparel in pawn.GetNanosuits())
         {

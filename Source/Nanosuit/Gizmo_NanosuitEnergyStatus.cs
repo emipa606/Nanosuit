@@ -9,7 +9,7 @@ public class Gizmo_NanosuitEnergyStatus : Gizmo
     private static readonly Texture2D FullShieldBarTex =
         SolidColorMaterials.NewSolidColorTexture(new Color(0.2f, 0.2f, 0.24f));
 
-    private static readonly Texture2D EmptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
+    private static readonly Texture2D emptyShieldBarTex = SolidColorMaterials.NewSolidColorTexture(Color.clear);
     public Apparel_Nanosuit nanosuit;
 
     public Gizmo_NanosuitEnergyStatus()
@@ -34,7 +34,7 @@ public class Gizmo_NanosuitEnergyStatus : Gizmo
         var rect4 = rect2;
         rect4.yMin = rect2.y + (rect2.height / 2f);
         var fillPercent = nanosuit.Energy / nanosuit.def.maxEnergyAmount;
-        Widgets.FillableBar(rect4, fillPercent, FullShieldBarTex, EmptyShieldBarTex, false);
+        Widgets.FillableBar(rect4, fillPercent, FullShieldBarTex, emptyShieldBarTex, false);
         Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.MiddleCenter;
         Widgets.Label(rect4, $"{nanosuit.Energy:F0} / {nanosuit.def.maxEnergyAmount}");

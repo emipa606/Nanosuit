@@ -1,0 +1,48 @@
+ManifestFileVersion: 0
+CRC: 1187144279
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 03b471f6cf3abfa57101bd455cfa3ab5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 03b471f6cf3abfa57101bd455cfa3ab5
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/cloak.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/NanosuitHelmet/NanosuitHelmet_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Male_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Fat_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Fat_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/jump.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/symbiosis.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Female_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/NanosuitHelmet/NanosuitHelmet_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Hulk_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/speed_in_combat_2.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Male_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/NanosuitHelmet/NanosuitHelmet.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Hulk_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Thin_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Male_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Female_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/NanosuitHelmet/NanosuitHelmet_north.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Female_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Fat_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Hulk_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/armor.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Thin_east.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/transceiverDevice1.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/speed_non_combat.png
+- Assets/Data/Mlie.Nanosuit/Textures/Things/Pawn/Humanlike/Apparel/Nanosuit/Nanosuit_Thin_south.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/speed.png
+- Assets/Data/Mlie.Nanosuit/Textures/UI/Buttons/strength.png
+Dependencies: []

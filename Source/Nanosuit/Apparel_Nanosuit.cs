@@ -15,8 +15,8 @@ public class Apparel_Nanosuit : Apparel
 {
     private readonly MethodInfo breakMethod = AccessTools.Method(typeof(CompShield), "Break");
     private Ability ability;
-    public ApparelMode activeMode;
-    public Dictionary<ApparelMode, bool> activeModes;
+    private ApparelMode activeMode;
+    private Dictionary<ApparelMode, bool> activeModes;
     private List<bool> boolValues;
 
     private CompAbilityEffect_Teleport customTeleportComp;
@@ -29,10 +29,10 @@ public class Apparel_Nanosuit : Apparel
     public bool jumpModeOutsideCombat;
 
     private List<ApparelMode> modeKeys;
-    public bool nightVisorActive;
+    private bool nightVisorActive;
 
-    public int skipTicks;
-    public bool symbiosisActive;
+    private int skipTicks;
+    private bool symbiosisActive;
 
     public float Energy
     {
@@ -122,7 +122,7 @@ public class Apparel_Nanosuit : Apparel
         return true;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         Energy += def.energyRegenerationPerTick;
@@ -164,18 +164,13 @@ public class Apparel_Nanosuit : Apparel
             else
             {
                 var badHediffs = Wearer.health.hediffSet.hediffs.Where(x =>
-                    (x.TryGetComp<HediffComp_GetsPermanent>()?.IsPermanent ?? false) || x.def.isBad);
+                    (x.TryGetComp<HediffComp_GetsPermanent>()?.IsPermanent ?? false) || x.def.isBad).ToArray();
                 if (badHediffs.Any())
                 {
                     var hediff = badHediffs.RandomElement();
 
                     var comp = hediff.TryGetComp<HediffComp_GetsPermanent>();
-                    if (comp is { IsPermanent: true })
-                    {
-                        Wearer.health.hediffSet.hediffs.Remove(hediff);
-                        Energy -= def.symbiosis.energyConsumption;
-                    }
-                    else if (hediff.def.isBad)
+                    if (comp is { IsPermanent: true } || hediff.def.isBad)
                     {
                         Wearer.health.hediffSet.hediffs.Remove(hediff);
                         Energy -= def.symbiosis.energyConsumption;
@@ -193,7 +188,7 @@ public class Apparel_Nanosuit : Apparel
 
         if (def.psychicWaveControl != null)
         {
-            var psychicDroneLevel = GetPsychicDroneLevel();
+            var psychicDroneLevel = getPsychicDroneLevel();
             if (psychicDroneLevel > PsychicDroneLevel.None)
             {
                 energyBonus += def.psychicWaveControl.energyGainPerTickWhenActive;
@@ -204,8 +199,8 @@ public class Apparel_Nanosuit : Apparel
         {
             GenTemperature_ComfortableTemperatureRange.dontCheckThis = true;
             var ambientTemperature = Wearer.AmbientTemperature;
-            var confortableTemperature = Wearer.ComfortableTemperatureRange();
-            if (!confortableTemperature.Includes(ambientTemperature))
+            var conformableTemperature = Wearer.ComfortableTemperatureRange();
+            if (!conformableTemperature.Includes(ambientTemperature))
             {
                 Energy -= def.environmentalControl.energyConsumptionWhenActive;
             }
@@ -271,13 +266,14 @@ public class Apparel_Nanosuit : Apparel
                nightVisorActive && energy >= def.nightVisor.energyConsumptionPerTickWhenActive;
     }
 
-    private PsychicDroneLevel GetPsychicDroneLevel()
+    private PsychicDroneLevel getPsychicDroneLevel()
     {
         var p = Wearer;
         var psychicDroneLevel = PsychicDroneLevel.None;
         if (p.Map != null)
         {
-            var highestPsychicDroneLevelFor = p.Map.gameConditionManager.GetHighestPsychicDroneLevelFor(p.gender);
+            var highestPsychicDroneLevelFor =
+                p.Map.gameConditionManager.GetHighestPsychicDroneLevelFor(p.gender, p.Map);
             if ((int)highestPsychicDroneLevelFor > (int)psychicDroneLevel)
             {
                 psychicDroneLevel = highestPsychicDroneLevelFor;
@@ -301,15 +297,15 @@ public class Apparel_Nanosuit : Apparel
                     continue;
                 }
 
-                var compCauseGameCondition_PsychicEmanation =
+                var compCauseGameConditionPsychicEmanation =
                     part.conditionCauser.TryGetComp<CompCauseGameCondition_PsychicEmanation>();
-                if (compCauseGameCondition_PsychicEmanation.ConditionDef.conditionClass ==
+                if (compCauseGameConditionPsychicEmanation.ConditionDef.conditionClass ==
                     typeof(GameCondition_PsychicEmanation) &&
-                    compCauseGameCondition_PsychicEmanation.InAoE(p.GetCaravan().Tile) &&
-                    compCauseGameCondition_PsychicEmanation.gender == p.gender &&
-                    (int)compCauseGameCondition_PsychicEmanation.Level > (int)psychicDroneLevel)
+                    compCauseGameConditionPsychicEmanation.InAoE(p.GetCaravan().Tile) &&
+                    compCauseGameConditionPsychicEmanation.gender == p.gender &&
+                    (int)compCauseGameConditionPsychicEmanation.Level > (int)psychicDroneLevel)
                 {
-                    psychicDroneLevel = compCauseGameCondition_PsychicEmanation.Level;
+                    psychicDroneLevel = compCauseGameConditionPsychicEmanation.Level;
                 }
             }
         }
@@ -318,14 +314,14 @@ public class Apparel_Nanosuit : Apparel
         {
             foreach (var activeCondition in map.gameConditionManager.ActiveConditions)
             {
-                var compCauseGameCondition_PsychicEmanation2 = activeCondition.conditionCauser
+                var compCauseGameConditionPsychicEmanation2 = activeCondition.conditionCauser
                     .TryGetComp<CompCauseGameCondition_PsychicEmanation>();
-                if (compCauseGameCondition_PsychicEmanation2 != null &&
-                    compCauseGameCondition_PsychicEmanation2.InAoE(p.GetCaravan().Tile) &&
-                    compCauseGameCondition_PsychicEmanation2.gender == p.gender &&
-                    (int)compCauseGameCondition_PsychicEmanation2.Level > (int)psychicDroneLevel)
+                if (compCauseGameConditionPsychicEmanation2 != null &&
+                    compCauseGameConditionPsychicEmanation2.InAoE(p.GetCaravan().Tile) &&
+                    compCauseGameConditionPsychicEmanation2.gender == p.gender &&
+                    (int)compCauseGameConditionPsychicEmanation2.Level > (int)psychicDroneLevel)
                 {
-                    psychicDroneLevel = compCauseGameCondition_PsychicEmanation2.Level;
+                    psychicDroneLevel = compCauseGameConditionPsychicEmanation2.Level;
                 }
             }
         }
@@ -333,7 +329,7 @@ public class Apparel_Nanosuit : Apparel
         return psychicDroneLevel;
     }
 
-    public TargetingParameters ForLoc(Pawn user)
+    private TargetingParameters forLoc(Pawn user)
     {
         var targetingParameters = new TargetingParameters
         {
@@ -347,19 +343,19 @@ public class Apparel_Nanosuit : Apparel
         return targetingParameters;
     }
 
-    public TargetingParameters ForHackableShields(Pawn user)
+    private TargetingParameters forHackableShields(Pawn user)
     {
         var targetingParameters = new TargetingParameters
         {
             canTargetBuildings = true,
             canTargetPawns = true,
             validator = x =>
-                IsHackableShield(x.Thing) && user.Position.DistanceTo(x.Cell) <= def.transceiverDevice.maxRangeEffect
+                isHackableShield(x.Thing) && user.Position.DistanceTo(x.Cell) <= def.transceiverDevice.maxRangeEffect
         };
         return targetingParameters;
     }
 
-    private bool IsHackableShield(Thing target)
+    private bool isHackableShield(Thing target)
     {
         if (target is Pawn pawn)
         {
@@ -370,7 +366,7 @@ public class Apparel_Nanosuit : Apparel
 
             foreach (var comp in pawn.AllComps)
             {
-                if (IsCustomShieldBeltComp(comp))
+                if (isCustomShieldBeltComp(comp))
                 {
                     return true;
                 }
@@ -378,14 +374,14 @@ public class Apparel_Nanosuit : Apparel
 
             foreach (var apparel in pawn.apparel?.WornApparel ?? [])
             {
-                if (IsCustomShieldBelt(apparel))
+                if (isCustomShieldBelt(apparel))
                 {
                     return true;
                 }
 
                 foreach (var comp in apparel.AllComps)
                 {
-                    if (IsCustomShieldBeltComp(comp))
+                    if (isCustomShieldBeltComp(comp))
                     {
                         return true;
                     }
@@ -404,14 +400,14 @@ public class Apparel_Nanosuit : Apparel
         return false;
     }
 
-    private bool IsCustomShieldBelt(Thing thing)
+    private static bool isCustomShieldBelt(Thing thing)
     {
         var type = thing.GetType();
         return type == ModCompatibility.ShieldMechBubbleType || type == ModCompatibility.ArchotechShieldBelt ||
                type == ModCompatibility.RangedShieldBelt;
     }
 
-    private bool IsCustomShieldBeltComp(ThingComp thingComp)
+    private static bool isCustomShieldBeltComp(ThingComp thingComp)
     {
         var type = thingComp.GetType();
         return type == ModCompatibility.ShieldMechBubbleType || type == ModCompatibility.ArchotechShieldBelt ||
@@ -427,11 +423,11 @@ public class Apparel_Nanosuit : Apparel
 
         if (Find.Selector.SingleSelectedThing == Wearer && Wearer.IsColonistPlayerControlled)
         {
-            var gizmo_NanosuitEnergyStatus = new Gizmo_NanosuitEnergyStatus
+            var gizmoNanosuitEnergyStatus = new Gizmo_NanosuitEnergyStatus
             {
                 nanosuit = this
             };
-            yield return gizmo_NanosuitEnergyStatus;
+            yield return gizmoNanosuitEnergyStatus;
         }
 
         if (def.armorMode != null)
@@ -443,7 +439,7 @@ public class Apparel_Nanosuit : Apparel
                 hotKey = NS_DefOf.NS_ArmorMode,
                 icon = ContentFinder<Texture2D>.Get("UI/Buttons/armor"),
                 isActive = () => IsActive(ApparelMode.ArmorMode),
-                toggleAction = delegate { SwitchApparelMode(ApparelMode.ArmorMode); }
+                toggleAction = delegate { switchApparelMode(ApparelMode.ArmorMode); }
             };
         }
 
@@ -456,7 +452,7 @@ public class Apparel_Nanosuit : Apparel
                 icon = ContentFinder<Texture2D>.Get("UI/Buttons/strength"),
                 isActive = () => IsActive(ApparelMode.StrengthMode),
                 hotKey = NS_DefOf.NS_StrengthMode,
-                toggleAction = delegate { SwitchApparelMode(ApparelMode.StrengthMode); }
+                toggleAction = delegate { switchApparelMode(ApparelMode.StrengthMode); }
             };
             if (def.strengthMode.jumpAbility)
             {
@@ -468,7 +464,7 @@ public class Apparel_Nanosuit : Apparel
                     icon = ContentFinder<Texture2D>.Get("UI/Buttons/jump"),
                     action = delegate
                     {
-                        Find.Targeter.BeginTargeting(ForLoc(Wearer),
+                        Find.Targeter.BeginTargeting(forLoc(Wearer),
                             delegate(LocalTargetInfo x) { Jump(x.Cell, def.strengthMode.jumpEnergyConsumption); },
                             null, null);
                     }
@@ -491,7 +487,7 @@ public class Apparel_Nanosuit : Apparel
                 hotKey = NS_DefOf.NS_SpeedMode,
                 icon = ContentFinder<Texture2D>.Get("UI/Buttons/speed"),
                 isActive = () => IsActive(ApparelMode.SpeedMode),
-                toggleAction = delegate { SwitchApparelMode(ApparelMode.SpeedMode); }
+                toggleAction = delegate { switchApparelMode(ApparelMode.SpeedMode); }
             };
             if (IsActive(ApparelMode.SpeedMode))
             {
@@ -562,8 +558,8 @@ public class Apparel_Nanosuit : Apparel
                 icon = ContentFinder<Texture2D>.Get("UI/Buttons/transceiverDevice1"),
                 action = delegate
                 {
-                    Find.Targeter.BeginTargeting(ForHackableShields(Wearer),
-                        delegate(LocalTargetInfo x) { DisableShield(x.Thing); }, null, null);
+                    Find.Targeter.BeginTargeting(forHackableShields(Wearer),
+                        delegate(LocalTargetInfo x) { disableShield(x.Thing); }, null, null);
                 }
             };
             if (def.transceiverDevice.energyConsumption > 0 && Energy < def.transceiverDevice.energyConsumption)
@@ -588,7 +584,7 @@ public class Apparel_Nanosuit : Apparel
         }
     }
 
-    private void DisableShield(Thing target)
+    private void disableShield(Thing target)
     {
         if (target is Pawn pawn)
         {
@@ -603,7 +599,7 @@ public class Apparel_Nanosuit : Apparel
 
             foreach (var comp in pawn.AllComps)
             {
-                if (IsCustomShieldBeltComp(comp))
+                if (isCustomShieldBeltComp(comp))
                 {
                     Traverse.Create(comp).Method("Break").GetValue();
                 }
@@ -615,13 +611,13 @@ public class Apparel_Nanosuit : Apparel
                 var apparel = list[num];
                 foreach (var comp in apparel.AllComps)
                 {
-                    if (IsCustomShieldBeltComp(comp))
+                    if (isCustomShieldBeltComp(comp))
                     {
                         Traverse.Create(comp).Method("Break").GetValue();
                     }
                 }
 
-                if (IsCustomShieldBelt(apparel))
+                if (isCustomShieldBelt(apparel))
                 {
                     Traverse.Create(apparel).Method("Break").GetValue();
                 }
@@ -638,18 +634,18 @@ public class Apparel_Nanosuit : Apparel
 
     public void Jump(IntVec3 target, float energyToConsume)
     {
-        if (NanosuitMod.settings.useSkipForJumping)
+        if (NanosuitMod.Settings.useSkipForJumping)
         {
-            SkipTo(target, energyToConsume);
+            skipTo(target, energyToConsume);
         }
         else
         {
             Pawn_CarryTracker_TryDropCarriedThing.pawn = Wearer;
-            JumpTo(target, energyToConsume);
+            jumpTo(target, energyToConsume);
         }
     }
 
-    public void SkipTo(IntVec3 target, float energyToConsume)
+    private void skipTo(IntVec3 target, float energyToConsume)
     {
         Pawn_Notify_Teleported.preventEndingJob = true;
         if (customTeleportComp is null)
@@ -684,7 +680,7 @@ public class Apparel_Nanosuit : Apparel
         Pawn_Notify_Teleported.preventEndingJob = false;
     }
 
-    public void JumpTo(IntVec3 target, float energyToConsume)
+    private void jumpTo(IntVec3 target, float energyToConsume)
     {
         var map = Wearer?.Map;
         if (map == null || !target.IsValid)
@@ -709,15 +705,12 @@ public class Apparel_Nanosuit : Apparel
 
     public bool IsActive(ApparelMode apparelMode)
     {
-        if (!NanosuitMod.settings.nanosuitModesAtTheSameTime)
+        if (!NanosuitMod.Settings.nanosuitModesAtTheSameTime)
         {
             return activeMode == apparelMode;
         }
 
-        if (activeModes is null)
-        {
-            activeModes = new Dictionary<ApparelMode, bool>();
-        }
+        activeModes ??= new Dictionary<ApparelMode, bool>();
 
         if (activeModes.TryGetValue(apparelMode, out var value))
         {
@@ -729,14 +722,11 @@ public class Apparel_Nanosuit : Apparel
         return false;
     }
 
-    private void SwitchApparelMode(ApparelMode apparelMode)
+    private void switchApparelMode(ApparelMode apparelMode)
     {
-        if (NanosuitMod.settings.nanosuitModesAtTheSameTime)
+        if (NanosuitMod.Settings.nanosuitModesAtTheSameTime)
         {
-            if (activeModes is null)
-            {
-                activeModes = new Dictionary<ApparelMode, bool>();
-            }
+            activeModes ??= new Dictionary<ApparelMode, bool>();
 
             if (!activeModes.TryAdd(apparelMode, true))
             {

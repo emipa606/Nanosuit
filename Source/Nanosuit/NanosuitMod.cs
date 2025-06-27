@@ -6,19 +6,19 @@ namespace Nanosuit;
 
 internal class NanosuitMod : Mod
 {
-    public static NanosuitSettings settings;
-    public static string currentVersion;
+    public static NanosuitSettings Settings;
+    public static string CurrentVersion;
 
     public NanosuitMod(ModContentPack pack) : base(pack)
     {
-        settings = GetSettings<NanosuitSettings>();
-        currentVersion = VersionFromManifest.GetVersionFromModMetaData(pack.ModMetaData);
+        Settings = GetSettings<NanosuitSettings>();
+        CurrentVersion = VersionFromManifest.GetVersionFromModMetaData(pack.ModMetaData);
     }
 
     public override void DoSettingsWindowContents(Rect inRect)
     {
         base.DoSettingsWindowContents(inRect);
-        settings.DoSettingsWindowContents(inRect);
+        Settings.DoSettingsWindowContents(inRect);
     }
 
     public override string SettingsCategory()

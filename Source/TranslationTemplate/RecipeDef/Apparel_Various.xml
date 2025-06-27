@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: remove nanosuit -->
+  <NS_RemoveNanosuit.label>remove nanosuit</NS_RemoveNanosuit.label>
+  <!-- EN: Remove nanosuit. -->
+  <NS_RemoveNanosuit.description>Remove nanosuit.</NS_RemoveNanosuit.description>
+  <!-- EN: Removing nanosuit. -->
+  <NS_RemoveNanosuit.jobString>Removing nanosuit.</NS_RemoveNanosuit.jobString>
+</LanguageData>

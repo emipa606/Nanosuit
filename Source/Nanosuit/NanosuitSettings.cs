@@ -21,11 +21,11 @@ internal class NanosuitSettings : ModSettings
         listingStandard.Begin(inRect);
         listingStandard.CheckboxLabeled("NS.MultipleModesAtTheSameTime".Translate(), ref nanosuitModesAtTheSameTime);
         listingStandard.CheckboxLabeled("NS.UseSkipForJumping".Translate(), ref useSkipForJumping);
-        if (NanosuitMod.currentVersion != null)
+        if (NanosuitMod.CurrentVersion != null)
         {
             listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listingStandard.Label("NS.CurrentModVersion".Translate(NanosuitMod.currentVersion));
+            listingStandard.Label("NS.CurrentModVersion".Translate(NanosuitMod.CurrentVersion));
             GUI.contentColor = Color.white;
         }
 

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Armor mode -->
+  <NS_ArmorMode.label>Armor mode</NS_ArmorMode.label>
+  <!-- EN: Cloak mode -->
+  <NS_CloakModeKey.label>Cloak mode</NS_CloakModeKey.label>
+  <!-- EN: Hack shields -->
+  <NS_HackShields.label>Hack shields</NS_HackShields.label>
+  <!-- EN: Jump mode -->
+  <NS_JumpMode.label>Jump mode</NS_JumpMode.label>
+  <!-- EN: Speed mode -->
+  <NS_SpeedMode.label>Speed mode</NS_SpeedMode.label>
+  <!-- EN: Strength mode -->
+  <NS_StrengthMode.label>Strength mode</NS_StrengthMode.label>
+  <!-- EN: Symbiosys mode -->
+  <NS_SymbiosysMode.label>Symbiosys mode</NS_SymbiosysMode.label>
+</LanguageData>
