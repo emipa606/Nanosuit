@@ -7,7 +7,7 @@
     <techLevel>Spacer</techLevel>
     <equippedStatOffsets>
       <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
-      <VacuumResistance>0.69</VacuumResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.69</VacuumResistance>
     </equippedStatOffsets>
     <recipeMaker>
       <unfinishedThingDef>UnfinishedTechArmor</unfinishedThingDef>

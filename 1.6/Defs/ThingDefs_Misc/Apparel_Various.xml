@@ -59,7 +59,7 @@
     </statBases>
     <equippedStatOffsets>
       <MoveSpeed>1.0</MoveSpeed>
-      <VacuumResistance>0.32</VacuumResistance>
+      <VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">0.32</VacuumResistance>
     </equippedStatOffsets>
     <thingCategories>
       <li>ApparelArmor</li>
