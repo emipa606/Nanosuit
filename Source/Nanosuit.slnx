@@ -3,4 +3,23 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="Nanosuit/Nanosuit.csproj" />
+  <Folder Name="/.github/">
+    <File Path="../.github/copilot-instructions.md" />
+  </Folder>
+  <Folder Name="/XML/Patches/">
+    <File Path="../Patches/AddSurgery.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Text.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/">
+    <File Path="../1.7/Defs/Keybinding.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs_Misc/">
+    <File Path="../1.7/Defs/ThingDefs_Misc/Apparel_Headgear.xml" />
+    <File Path="../1.7/Defs/ThingDefs_Misc/Apparel_Various.xml" />
+  </Folder>
 </Solution>

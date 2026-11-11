@@ -14,9 +14,9 @@ public class Recipe_RemoveNanosuit : Recipe_Surgery
             return false;
         }
 
-        foreach (var apparel in pawn.GetNanosuits())
+        foreach (var nanosuitDef in pawn.GetNanosuits().Select(x => x.def))
         {
-            if (apparel.def.hardRemoval != null && apparel.def.hardRemoval.surgeryList.Contains(recipe))
+            if (nanosuitDef.hardRemoval != null && nanosuitDef.hardRemoval.surgeryList.Contains(recipe))
             {
                 return true;
             }

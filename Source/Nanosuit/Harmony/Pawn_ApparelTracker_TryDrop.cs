@@ -9,7 +9,7 @@ namespace Nanosuit.Harmony;
     [ArgumentType.Normal, ArgumentType.Out, ArgumentType.Normal, ArgumentType.Normal])]
 public static class Pawn_ApparelTracker_TryDrop
 {
-    private static void Postfix(Pawn_ApparelTracker __instance, Apparel ap)
+    public static void Postfix(Pawn_ApparelTracker __instance, Apparel ap)
     {
         if (ap?.def != NS_DefOf.NS_Apparel_Nanosuit)
         {

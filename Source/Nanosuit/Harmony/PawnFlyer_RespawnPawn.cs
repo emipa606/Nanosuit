@@ -6,7 +6,7 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(PawnFlyer), "RespawnPawn")]
-public class PawnFlyer_RespawnPawn
+public static class PawnFlyer_RespawnPawn
 {
     public static void Prefix(PawnFlyer __instance, out Pawn __state)
     {

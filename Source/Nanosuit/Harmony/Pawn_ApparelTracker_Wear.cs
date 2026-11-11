@@ -11,7 +11,7 @@ public static class Pawn_ApparelTracker_Wear
         var pawn = __instance?.pawn;
         if (pawn != null && newApparel is Apparel_Nanosuit nanosuit && nanosuit.def.hardRemoval != null)
         {
-            __instance.Lock(newApparel);
+            __instance?.Lock(newApparel);
         }
     }
 }

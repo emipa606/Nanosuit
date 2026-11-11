@@ -4,9 +4,9 @@ using Verse;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Tool), nameof(Tool.AdjustedCooldown), typeof(Thing))]
-internal class Tool_AdjustedCooldown
+internal static class Tool_AdjustedCooldown
 {
-    private static void Postfix(ref float __result, Thing ownerEquipment)
+    public static void Postfix(ref float __result, Thing ownerEquipment)
     {
         if (ownerEquipment == null || !(__result > 0) || ownerEquipment.ParentHolder?.ParentHolder == null)
         {

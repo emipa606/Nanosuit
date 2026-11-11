@@ -355,7 +355,7 @@ public class Apparel_Nanosuit : Apparel
         return targetingParameters;
     }
 
-    private bool isHackableShield(Thing target)
+    private static bool isHackableShield(Thing target)
     {
         if (target is Pawn pawn)
         {
@@ -364,13 +364,11 @@ public class Apparel_Nanosuit : Apparel
                 return true;
             }
 
-            foreach (var comp in pawn.AllComps)
+            if (pawn.AllComps.Any(isCustomShieldBeltComp))
             {
-                if (isCustomShieldBeltComp(comp))
-                {
-                    return true;
-                }
+                return true;
             }
+
 
             foreach (var apparel in pawn.apparel?.WornApparel ?? [])
             {
@@ -379,12 +377,9 @@ public class Apparel_Nanosuit : Apparel
                     return true;
                 }
 
-                foreach (var comp in apparel.AllComps)
+                if (apparel.AllComps.Any(isCustomShieldBeltComp))
                 {
-                    if (isCustomShieldBeltComp(comp))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
@@ -597,24 +592,18 @@ public class Apparel_Nanosuit : Apparel
                 }
             }
 
-            foreach (var comp in pawn.AllComps)
+            foreach (var comp in pawn.AllComps.Where(isCustomShieldBeltComp))
             {
-                if (isCustomShieldBeltComp(comp))
-                {
-                    Traverse.Create(comp).Method("Break").GetValue();
-                }
+                Traverse.Create(comp).Method("Break").GetValue();
             }
 
             var list = pawn.apparel?.WornApparel ?? [];
             for (var num = list.Count - 1; num >= 0; num--)
             {
                 var apparel = list[num];
-                foreach (var comp in apparel.AllComps)
+                foreach (var comp in apparel.AllComps.Where(isCustomShieldBeltComp))
                 {
-                    if (isCustomShieldBeltComp(comp))
-                    {
-                        Traverse.Create(comp).Method("Break").GetValue();
-                    }
+                    Traverse.Create(comp).Method("Break").GetValue();
                 }
 
                 if (isCustomShieldBelt(apparel))
@@ -688,7 +677,7 @@ public class Apparel_Nanosuit : Apparel
             return;
         }
 
-        Wearer.rotationTracker.FaceCell(target);
+        Wearer?.rotationTracker.FaceCell(target);
         var pawnFlyer = PawnFlyer.MakeFlyer(ThingDefOf.PawnFlyer, Wearer, target,
             DefDatabase<EffecterDef>.GetNamedSilentFail("JumpFlightEffect"),
             DefDatabase<SoundDef>.GetNamedSilentFail("JumpPackLand"), true);

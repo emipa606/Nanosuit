@@ -1,18 +1,19 @@
 # [Nanosuit (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2894429906)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of Mezz, Ogam, Taranchuks mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=2518548808
 
 Uses jumo logic from either Royalty or Biotech so one of those DLCs are required. 
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
-![Image](https://i.imgur.com/tE28cZ7.gif)
-![Image](https://i.imgur.com/B5Zgrb1.png)
+![Image](https://img.litet.net/logos/ImageNotFound.png)
+
+![Image](https://img.litet.net/B5Zgrb1.png)
 
 Introducing the Crysis Nanosuit. Inspired by the Crysis series, the Nanosuit is brought into the Rimworld universe.
 
@@ -22,7 +23,7 @@ A LOT of things are configurable via the XML file so if you feel it to be overpo
 
 **CE COMPATIBLE** 
 
-![Image](https://i.imgur.com/kkaSETo.png)
+![Image](https://img.litet.net/kkaSETo.png)
 
 # Nanosuit Stats:
 
@@ -34,13 +35,13 @@ A LOT of things are configurable via the XML file so if you feel it to be overpo
 -Move speed offset: 1c/s
 -Once a pawn wears a Nanosuit, they will not be able to take it off. It's bonded to the wearer.
 -Needs surgery to remove Nanosuit.
-![Image](https://i.imgur.com/rut5bVm.png)
+![Image](https://img.litet.net/rut5bVm.png)
 
-![Image](https://i.imgur.com/XNnH0c5.png)
+![Image](https://img.litet.net/XNnH0c5.png)
 
 # FUNCTIONS
 
-![Image](https://i.imgur.com/eZLWcAz.png)
+![Image](https://img.litet.net/eZLWcAz.png)
 
 # Primary Functions:
 
@@ -70,7 +71,7 @@ Config options in [mod settings]
 -Enable/disable using multiple modes at the same time.
 -Option to make [Jumping] to function like the jetpack or skipping like the psychic power.
 
-![Image](https://i.imgur.com/6oqPvaw.png)
+![Image](https://img.litet.net/6oqPvaw.png)
 
 Join our discord for more info and chat with creators and community!
 https://discord.gg/RuVcy7Mfdp
@@ -81,16 +82,16 @@ https://discord.gg/RuVcy7Mfdp
 ** Art: ** Ogam
 
 You can commission art from me via Discord Ogam#7154
-[![Image](https://i.imgur.com/ABiEe4Z.png)](https://discord.gg/fGejcxbSY5)
-[![Image](https://i.imgur.com/cfoFEMA.png)](https://discord.gg/7befJWr9xS)
+[![Image](https://img.litet.net/ABiEe4Z.png)](https://discord.gg/fGejcxbSY5)
+[![Image](https://img.litet.net/cfoFEMA.png)](https://discord.gg/7befJWr9xS)
 	
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -98,4 +99,4 @@ You can commission art from me via Discord Ogam#7154
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/Nanosuit?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894429906) | tags:  overpowered,  customization
+[![Image](https://img.shields.io/github/v/release/emipa606/Nanosuit?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2894429906) | customization, overpowered

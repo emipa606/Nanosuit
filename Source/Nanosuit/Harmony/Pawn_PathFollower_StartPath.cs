@@ -5,9 +5,9 @@ using Verse.AI;
 namespace Nanosuit.Harmony;
 
 [HarmonyPatch(typeof(Pawn_PathFollower), nameof(Pawn_PathFollower.StartPath))]
-public class Pawn_PathFollower_StartPath
+public static class Pawn_PathFollower_StartPath
 {
-    private static void Postfix(Pawn_PathFollower __instance, Pawn ___pawn)
+    public static void Postfix(Pawn_PathFollower __instance, Pawn ___pawn)
     {
         foreach (var apparel in ___pawn.GetNanosuits())
         {

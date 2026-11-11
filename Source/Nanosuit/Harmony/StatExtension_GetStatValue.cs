@@ -7,7 +7,7 @@ namespace Nanosuit.Harmony;
 [HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
 public static class StatExtension_GetStatValue
 {
-    private static void Postfix(Thing thing, StatDef stat, ref float __result)
+    public static void Postfix(Thing thing, StatDef stat, ref float __result)
     {
         if (thing is not Pawn pawn)
         {

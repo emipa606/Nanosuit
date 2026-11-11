@@ -17,42 +17,45 @@ public static class Utils
         JobDefOf.Flee
     ];
 
-    public static IEnumerable<Apparel_Nanosuit> GetNanosuits(this Pawn pawn)
+    extension(Pawn pawn)
     {
-        var apparels = pawn.apparel?.WornApparel?.OfType<Apparel_Nanosuit>();
-        if (apparels == null)
+        public IEnumerable<Apparel_Nanosuit> GetNanosuits()
         {
-            yield break;
+            var apparels = pawn.apparel?.WornApparel?.OfType<Apparel_Nanosuit>();
+            if (apparels == null)
+            {
+                yield break;
+            }
+
+            foreach (var apparel in apparels)
+            {
+                yield return apparel;
+            }
         }
 
-        foreach (var apparel in apparels)
+        public bool InCombat()
         {
-            yield return apparel;
-        }
-    }
+            if (combatJobs.Contains(pawn.CurJobDef))
+            {
+                return true;
+            }
 
-    public static bool InCombat(this Pawn pawn)
-    {
-        if (combatJobs.Contains(pawn.CurJobDef))
+            if (pawn.mindState?.duty?.def.alwaysShowWeapon ?? false)
+            {
+                return true;
+            }
+
+            return pawn.CurJobDef?.alwaysShowWeapon ?? false;
+        }
+
+        public bool ShouldBeDowned()
         {
+            if (!pawn.health.InPainShock && pawn.health.capacities.CanBeAwake)
+            {
+                return !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Moving);
+            }
+
             return true;
         }
-
-        if (pawn.mindState?.duty?.def.alwaysShowWeapon ?? false)
-        {
-            return true;
-        }
-
-        return pawn.CurJobDef?.alwaysShowWeapon ?? false;
-    }
-
-    public static bool ShouldBeDowned(this Pawn pawn)
-    {
-        if (!pawn.health.InPainShock && pawn.health.capacities.CanBeAwake)
-        {
-            return !pawn.health.capacities.CapableOf(PawnCapacityDefOf.Moving);
-        }
-
-        return true;
     }
 }
